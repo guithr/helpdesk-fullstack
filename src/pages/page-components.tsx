@@ -3,6 +3,7 @@ import Text from "../components/ui/text";
 import PenLine from "../assets/icons/pen-line.svg?react";
 import Ban from "../assets/icons/ban.svg?react";
 import Button from "../components/ui/button";
+import Input from "../components/ui/input";
 
 export default function PageComponents() {
   return (
@@ -46,6 +47,27 @@ export default function PageComponents() {
           </Button>
           <Button icon={PenLine} variant="link" size="sm" />
         </div>
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <form className="grid grid-cols-3 gap-3">
+          <Input
+            label="Senha atual"
+            placeholder="Digite sua senha atual"
+            type="password"
+          />
+          <Input
+            label="Nova senha"
+            helperText="Mínimo de 6 digitos"
+            placeholder="Digite sua senha atual"
+            type="password"
+          />
+          <Input
+            label="label"
+            placeholder="Placeholder"
+            helperText="Helper text"
+          />
+        </form>
       </div>
     </div>
   );
