@@ -1,9 +1,12 @@
 import Icon from "../components/ui/icon";
 import Text from "../components/ui/text";
 import PenLine from "../assets/icons/pen-line.svg?react";
+import Chevron from "../assets/icons/chevron-down.svg?react";
+import Briefcase from "../assets/icons/briefcase-business.svg?react";
 import Ban from "../assets/icons/ban.svg?react";
 import Button from "../components/ui/button";
 import Input from "../components/ui/input";
+import Select from "../components/ui/select";
 
 export default function PageComponents() {
   return (
@@ -12,10 +15,7 @@ export default function PageComponents() {
         Pagina componentes
       </Text>
 
-      <div className="flex flex-col gap-2">
-        <Icon svg={Ban} fill="fill-feedback-danger" />
-      </div>
-
+      {/* Buttons */}
       <div className="flex flex-col gap-4">
         <div className="flex gap-2 items-center">
           <Button icon={PenLine} disabled>
@@ -49,25 +49,83 @@ export default function PageComponents() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4">
-        <form className="grid grid-cols-3 gap-3">
-          <Input
-            label="Senha atual"
-            placeholder="Digite sua senha atual"
-            type="password"
-          />
-          <Input
-            label="Nova senha"
-            helperText="Mínimo de 6 digitos"
-            placeholder="Digite sua senha atual"
-            type="password"
-          />
-          <Input
-            label="label"
-            placeholder="Placeholder"
-            helperText="Helper text"
-          />
-        </form>
+      {/* Icons */}
+      <div className="flex gap-2">
+        <Icon svg={Ban} fill="fill-feedback-danger" />
+        <Icon svg={Chevron} fill="fill-feedback-danger" />
+        <Icon svg={Briefcase} fill="fill-feedback-danger" />
+      </div>
+
+      {/* Input */}
+      <div className="grid grid-cols-6 gap-2">
+        <Input
+          label="Empty / Default"
+          placeholder="Placeholder"
+          helperText="Helper text"
+        />
+        <Input label="Empty / Focus" placeholder="" helperText="Helper text" />
+        <Input
+          error="true"
+          label="Empty / Error"
+          placeholder="Placeholder"
+          helperText="Label"
+        />
+        <Input
+          value="Text"
+          label="Filled / Default"
+          placeholder=""
+          helperText="Helper text"
+        />
+        <Input
+          value="Text"
+          label="Filled / Focus"
+          placeholder=""
+          helperText="Helper text"
+        />
+
+        <Input
+          error="true"
+          value="Text"
+          label="Filled / Error"
+          placeholder=""
+          helperText="Helper text"
+        />
+      </div>
+
+      <div className="grid grid-cols-6 gap-2">
+        <Select
+          placeholder="Placeholder"
+          helperText="Helper text"
+          label="Empty / Default"
+        ></Select>
+        <Select
+          placeholder="Placeholder"
+          helperText="Helper text"
+          label="Empty / Active"
+        ></Select>
+        <Select
+          placeholder="Placeholder"
+          helperText="Helper text"
+          label="Empty / Error"
+          error="true"
+        ></Select>
+        <Select
+          placeholder="Placeholder"
+          helperText="Helper text"
+          label="Selected / Default"
+        ></Select>
+        <Select
+          placeholder="Placeholder"
+          helperText="Helper text"
+          label="Selected / Active"
+        ></Select>
+        <Select
+          placeholder="Placeholder"
+          helperText="Helper text"
+          label="Selected / Error"
+          error="true"
+
+        ></Select>
       </div>
     </div>
   );

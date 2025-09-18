@@ -6,33 +6,18 @@ import CircleAlert from "../../assets/icons/circle-alert.svg?react";
 
 // Container agora tem variante para controlar o gap
 export const inputContainerVariants = tv({
-  base: `flex flex-col w-full group`,
-  variants: {
-    withHelper: {
-      true: "gap-2",
-      false: "gap-0",
-    },
-  },
+  base: `flex flex-col w-full group gap-2`,
 });
 
 export const inputWrapperVariants = tv({
   base: `
-    outline-none border-b border-gray-500
+    outline-none pb-1 border-b border-gray-500
     text-md-regular text-gray-200
     placeholder-gray-400
     focus:border-blue-base
     focus:caret-blue-base
     transition-colors
-  `,
-  variants: {
-    state: {
-      error: "border-feedback-danger focus:border-feedback-danger",
-      default: "", // precisa declarar explicitamente
-    },
-  },
-  defaultVariants: {
-    state: "default",
-  },
+  `
 });
 
 export const labelVariants = tv({
@@ -83,7 +68,7 @@ export default function Input({
 
   return (
     <div
-      className={inputContainerVariants({ withHelper: Boolean(helperText) })}
+      className={inputContainerVariants()}
     >
       <label htmlFor={inputId} className={labelVariants({ state })}>
         <Text variant="text-xxs">{label}</Text>
@@ -92,7 +77,7 @@ export default function Input({
       <input
         {...props}
         id={inputId}
-        className={inputWrapperVariants({ state })}
+        className={inputWrapperVariants({})}
       />
 
       {helperText && (
