@@ -7,6 +7,8 @@ import Ban from "../assets/icons/ban.svg?react";
 import Button from "../components/ui/button";
 import Input from "../components/ui/input";
 import Select from "../components/ui/select";
+import TagStatus from "../components/ui/tag-status";
+import TagTime from "../components/ui/tag-time";
 
 export default function PageComponents() {
   return (
@@ -92,6 +94,7 @@ export default function PageComponents() {
         />
       </div>
 
+      {/* Select */}
       <div className="grid grid-cols-6 gap-2">
         <Select
           placeholder="Placeholder"
@@ -124,8 +127,24 @@ export default function PageComponents() {
           helperText="Helper text"
           label="Selected / Error"
           error="true"
-
         ></Select>
+      </div>
+
+      {/* Tag Status */}
+      <div className="flex gap-2">
+        <TagStatus variant="new">Label</TagStatus>
+        <TagStatus variant="info">Label</TagStatus>
+        <TagStatus variant="success">Label</TagStatus>
+        <TagStatus variant="danger">Label</TagStatus>
+      </div>
+      {/* Tag Time */}
+      <div className="flex gap-2">
+        <TagTime>07:00</TagTime>
+        <TagTime>08:00</TagTime>
+        <TagTime>09:00</TagTime>
+        <TagTime>10:00</TagTime>
+        <TagTime>11:00</TagTime>
+        <TagTime state="readonly">12:00</TagTime>
       </div>
     </div>
   );
