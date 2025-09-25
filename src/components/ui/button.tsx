@@ -6,6 +6,7 @@ import Text from "./text";
 export const buttonVariants = tv({
   base: `
     flex items-center justify-center gap-2
+    font-bold
     transition group 
     cursor-pointer
     border-none rounded-[5px] 

@@ -1,12 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router";
-import PageComponents from "./pages/page-components";
+import { Routes } from "./routes";
 
 export function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/componentes" element={<PageComponents />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <Routes />;
 }
